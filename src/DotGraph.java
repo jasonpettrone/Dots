@@ -1,6 +1,6 @@
 public class DotGraph {
 
-    Dot[][] graph;
+    public Dot[][] graph;
 
     public DotGraph(int numCols, int numRows){
         graph = new Dot[numCols][numRows];

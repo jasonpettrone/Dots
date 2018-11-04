@@ -9,6 +9,7 @@ public class DrawGraph extends PApplet{
     private float yDotSeperator;
     private DotGraph g;
 
+
     public DrawGraph(DotGraph g, int windowXSize, int windowYSize){
 
         this.g = g;
@@ -35,6 +36,20 @@ public class DrawGraph extends PApplet{
             }
             xPos += xDotSeperator;
         }
+    }
+
+    public DotHitBoxGraph generateDotHitBoxes(){
+        DotHitBoxGraph hitboxes = new DotHitBoxGraph(numXDots, numYDots);
+        float xPos = xDotSeperator;
+        for(int i = 0; i < numXDots; ++i){
+            float yPos = yDotSeperator;
+            for(int j = 0; j < numYDots; ++j){
+                hitboxes.add(new DotHitBox(xPos,yPos,xDotSeperator,yDotSeperator),i,j);
+                yPos += yDotSeperator;
+            }
+            xPos += xDotSeperator;
+        }
+        return hitboxes;
     }
 
     public void setDotDrawColor(Main m,int i, int j){
