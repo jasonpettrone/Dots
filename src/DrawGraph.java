@@ -28,12 +28,31 @@ public class DrawGraph extends PApplet{
         float xPos = xDotSeperator;
         for(int i = 0; i < numXDots; ++i){
             float yPos = yDotSeperator;
-            m.ellipse(xPos,yPos,dotSize,dotSize);
             for(int j = 0; j < numYDots; ++j){
+                setDotDrawColor(m,i,j);
                 m.ellipse(xPos, yPos,dotSize,dotSize);
                 yPos += yDotSeperator;
             }
             xPos += xDotSeperator;
+        }
+    }
+
+    public void setDotDrawColor(Main m,int i, int j){
+        String color = g.graph[i][j].getColor();
+        if(color.equals("Green")){
+            m.fill(51,255,51);
+        }
+        else if(color.equals("Yellow")){
+            m.fill(255,255,0);
+        }
+        else if(color.equals("Red")){
+            m.fill(255,0,0);
+        }
+        else if(color.equals("Purple")){
+            m.fill(127,0,255);
+        }
+        else if(color.equals("Blue")){
+            m.fill(51,255,255);
         }
     }
 }

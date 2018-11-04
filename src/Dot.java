@@ -19,4 +19,16 @@ public class Dot {
         this.yPos = yPos;
         this.color = color;
     }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getxPos() {
+        return xPos;
+    }
+
+    public int getyPos() {
+        return yPos;
+    }
 }
